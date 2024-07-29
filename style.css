@@ -54,7 +54,10 @@ nav ul li a {
 .about-text {
     overflow: hidden;
 }
-
+main{
+    flex : 1 ;
+    background-color: #f1f1f1;
+}
 footer {
     background-color: #f1f1f1;
     text-align: center;
