@@ -1,42 +1,32 @@
+/* Existing CSS */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/* 
 header {
-    background-color: #f8f8f8;
+    background: #f8f8f8;
     padding: 10px 0;
-    position: relative;
-}
-
-header .dashboard-img {
-    width: 100%;
-    height: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-}
-
-nav .logo {
-    width: 50px;
-    height: 50px;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 nav ul li a {
@@ -45,23 +35,33 @@ nav ul li a {
     font-weight: bold;
 }
 
+.full-page-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
 .about-logo {
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+    display: block;
+    margin: 20px auto;
 }
 
 .about-text {
-    overflow: hidden;
-}
-
-footer {
-    background-color: #f1f1f1;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px;
 }
 
+.about-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-text ul li {
+    margin: 10px 0;
+} */
+
+/* New CSS for Contact Section */
 #contact {
     background-color: #f0f4fc;
     padding: 40px 20px;
