@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITKC - Survey Form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <header>
-        <img src="dashboard.png" alt="Dashboard Image" class="dashboard-img">
+        <img src="./itglogo.png" alt="Dashboard Image" class="dashboard-img">
         <nav>
-            <img src="logo.png" alt="Logo" class="logo">
-            <ul>
+            <img src="./itkclogo.png" alt="Logo" class="logo">
+            <ul class="Navbar">
+                <li><div class="dropdown">
+                    <button class="dropbtn">Login
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="admin.html">Admin Login</a>
+                      <a href="supervisor.html">Supervisor Login</a>
+                    </div></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="coursestable.html">Courses</a></li>
                 <li><a href="form.html">Form</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="admin.html">Admin Login</a></li>
+                <li><a href="supervisor.html">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -29,6 +37,9 @@
             <label for="school_name">Name of School:</label>
             <input type="text" id="school_name" name="school_name" required><br><br>
 
+            <label for="regis_no">School Registration Number:</label>
+            <input type="text" id="regis_no" name="regis_no" required><br><br>
+
             <label for="principal_name">Name of Principal or Teacher:</label>
             <input type="text" id="principal_name" name="principal_name" required><br><br>
 
@@ -38,6 +49,19 @@
             <label for="cares_scheme">Is the school a beneficiary of the 'CARES SCHEME' (Coding And Robotics education in school)?</label><br>
             <input type="radio" id="cares_scheme_yes" name="cares_scheme" value="1"> Yes
             <input type="radio" id="cares_scheme_no" name="cares_scheme" value="0"> No<br><br>
+
+            <h2>Address</h2>
+            <label for="road_name">Roadname/area/colony:</label>
+            <input type="text" id="road_name" name="road_name" required><br><br>
+
+            <label for="city_town">City/Town:</label>
+            <input type="text" id="city_town" name="city_town" required><br><br>
+
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" required><br><br>
+
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" required><br><br>
 
             <h2>Principal Information</h2>
             <label for="principal_phone">Principal Phone Number:</label>
@@ -136,8 +160,8 @@
             <label for="lab_picture">Upload Computer Lab Picture:</label>
             <input type="file" id="lab_picture" name="lab_picture" required><br><br>
 
-            <label for="environment_picture">Upload Surrounding Environment Picture:</label>
-            <input type="file" id="environment_picture" name="environment_picture" required><br><br>
+            <label for="env_picture">Upload Surrounding Environment Picture:</label>
+            <input type="file" id="env_picture" name="env_picture" required><br><br>
 
             <label for="school_picture">Upload School Picture:</label>
             <input type="file" id="school_picture" name="school_picture" required><br><br>
