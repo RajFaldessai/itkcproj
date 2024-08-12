@@ -31,6 +31,7 @@ if (isset($_GET['id'])) {
         // Generate HTML content
         $html = '<h1>Survey Report</h1>';
         $html .= '<p><strong>School Name:</strong> ' . $school['school_name'] . '</p>';
+        $html .= '<p><strong>School Registration Number:</strong> ' . $school['reg_no'] . '</p>';
         $html .= '<p><strong>Principal Name:</strong> ' . $school['principal_name'] . '</p>';
         $html .= '<p><strong>Contact Info:</strong> ' . $school['contact_info'] . '</p>';
         $html .= '<p><strong>CARES Scheme Beneficiary:</strong> ' . $school['cares_scheme'] . '</p>';

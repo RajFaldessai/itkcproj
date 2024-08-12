@@ -35,11 +35,12 @@ $result = $conn->query($sql);
                       <a href="#">Supervisor Login</a>
                     </div></li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="index.html#about">About</a></li>
                 <li><a href="coursestable.html">Courses</a></li>
 
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="admin_logout.php">Logout</a></li>
                 
             </ul>
         </nav>
@@ -68,7 +69,7 @@ $result = $conn->query($sql);
             }
             ?>
         </table>
-        <a href="admin_logout.php">Logout</a>
+        
     </main>
     <footer>
         <p>&copy; 2024 IT Knowledge Centre. All rights reserved.</p>
