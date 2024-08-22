@@ -1,8 +1,15 @@
 body {
+    /* font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -73,9 +80,12 @@ nav ul li a:hover{
 }
 
 footer {
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0; */
     background-color: #f1f1f1;
     text-align: center;
     padding: 10px 0;
@@ -204,8 +214,8 @@ iframe {
 
   
 main {
-    display: flex;
-    background-color: white; /* White background for the form */
+    /* display: flex;
+    background-color: white; 
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -213,7 +223,13 @@ main {
     text-align: center;
     justify-content: center;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 100px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Allow the main content to grow and take up available space */
+    padding: 20px;
 }
 
 h1 {
@@ -251,4 +267,35 @@ button {
 
 button:hover {
     background-color: #f5e942; /* Slightly darker yellow on hover */
+}
+
+.register-link {
+    /* display: block;
+    margin-top: 10px;
+    text-align: left;
+    color: #2a2185; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; */
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #2a2185;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.register-link:hover {
+    color: #f5e942; /* Slightly darker yellow on hover */
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    position: relative;
 }

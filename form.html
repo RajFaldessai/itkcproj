@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITKC - Survey Form</title>
     <link rel="stylesheet" href="form.css">
+    <script src="camera.js"></script>
 </head>
+
 <body>
     <header>
-        <a href="https://www.goa.gov.in/department/info-tech-corporation-of-goa-ltd/"><img src="./itglogo.png" alt="Dashboard Image" class="dashboard-img"></a>
+        <a href="https://www.goa.gov.in/department/info-tech-corporation-of-goa-ltd/"><img src="./itglogo.png"
+                alt="Dashboard Image" class="dashboard-img"></a>
         <nav>
             <a href="https://itkc.goa.gov.in/"><img src="./itkclogo.png" alt="Logo" class="logo"></a>
             <ul>
@@ -25,20 +29,23 @@
     <main>
         <form action="process_form.php" method="POST" enctype="multipart/form-data">
             <h1>School Survey Form</h1>
-            
+
             <label for="school_name">Name of School:</label>
             <input type="text" id="school_name" name="school_name" required><br><br>
 
             <label for="reg_no">School Registration Number:</label>
-            <input type="text" id="reg_no" name="reg_no" required><br><br>
+            <input type="text" id="reg_no" name="reg_no" required pattern="\d+"
+                title="Registration number should contain only digits."><br><br>
 
             <label for="principal_name">Name of Principal or Teacher:</label>
-            <input type="text" id="principal_name" name="principal_name" required><br><br>
+            <input type="text" id="principal_name" name="principal_name" requiredminlength="3" maxlength="100"
+                pattern="[A-Za-z\s]+" title="Name should contain only letters and spaces."><br><br>
 
             <label for="contact_info">Contact Info (Email, Phone Number, School Telephone Number):</label>
             <input type="text" id="contact_info" name="contact_info" required><br><br>
 
-            <label for="cares_scheme">Is the school a beneficiary of the 'CARES SCHEME' (Coding And Robotics education in school)?</label><br>
+            <label for="cares_scheme">Is the school a beneficiary of the 'CARES SCHEME' (Coding And Robotics education
+                in school)?</label><br>
             <input type="radio" id="cares_scheme_yes" name="cares_scheme" value="1"> Yes
             <input type="radio" id="cares_scheme_no" name="cares_scheme" value="0"> No<br><br>
 
@@ -57,11 +64,13 @@
 
             <h2>Principal Information</h2>
             <label for="principal_phone">Principal Phone Number:</label>
-            <input type="text" id="principal_phone" name="principal_phone" required><br><br>
+            <input type="text" id="principal_phone" name="principal_phone" required required
+                pattern="^\+?\d{0,2}\s?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{9}$"
+                title="Enter a valid phone number."><br><br>
 
             <h2>Student Information</h2>
             <label for="total_students">Total Students:</label>
-            <input type="number" id="total_students" name="total_students" required><br><br>
+            <input type="number" id="total_students" name="total_students" required min="1"><br><br>
 
             <h2>Lab Details</h2>
             <label for="total_systems">Total Number of Systems (Excluding CARES):</label>
@@ -91,13 +100,15 @@
             <input type="radio" id="assessments_no" name="online_assessments" value="0"> No<br><br>
 
             <label for="internal_storage">Internal Storage:</label>
-            <input type="text" id="internal_storage" name="internal_storage" required><br><br>
+            <input type="text" id="internal_storage" name="internal_storage" required pattern="\d+[GT]B"
+                title="Enter storage in GB or TB format, e.g., 500GB or 1TB."><br><br>
 
             <label for="processor">Processor:</label>
             <input type="text" id="processor" name="processor" required><br><br>
 
             <label for="ram">RAM:</label>
-            <input type="text" id="ram" name="ram" required><br><br>
+            <input type="text" id="ram" name="ram" required pattern="\d+[GT]B"
+                title="Enter storage in GB or TB format, e.g., 500GB or 1TB."><br><br>
 
             <h2>Installed Applications</h2>
             <label for="applications">Applications:</label><br>
@@ -109,7 +120,8 @@
             <input type="checkbox" id="one_drive" name="applications[]" value="One Drive"> One Drive
             <input type="checkbox" id="ms_office" name="applications[]" value="M/S Office"> M/S Office
             <input type="checkbox" id="vs_code" name="applications[]" value="VS CODE"> VS CODE
-            <input type="checkbox" id="visual_cpp" name="applications[]" value="M/s Visual C++ 2013"> M/s Visual C++ 2013
+            <input type="checkbox" id="visual_cpp" name="applications[]" value="M/s Visual C++ 2013"> M/s Visual C++
+            2013
             <input type="checkbox" id="python" name="applications[]" value="Python 32-Bit"> Python 32-Bit
             <input type="checkbox" id="youtube" name="applications[]" value="YouTube"> YouTube
             <input type="checkbox" id="skype" name="applications[]" value="Skype"> Skype<br><br>
@@ -119,10 +131,10 @@
 
             <h2>Scheduling and Logistics</h2>
             <label for="lecture_timings">Lecture Timings:</label>
-            <input type="text" id="lecture_timings" name="lecture_timings" required><br><br>
+            <input type="time" id="lecture_timings" name="lecture_timings" required><br><br>
 
             <label for="lab_timings">Lab Timings:</label>
-            <input type="text" id="lab_timings" name="lab_timings" required><br><br>
+            <input type="time" id="lab_timings" name="lab_timings" required><br><br>
 
             <h2>Transportation Challenges</h2>
             <label for="transportation_issues">Transportation Issues:</label><br>
@@ -148,15 +160,41 @@
             <label for="shortcomings">Shortcomings:</label><br>
             <textarea id="shortcomings" name="shortcomings" rows="4" required></textarea><br><br>
 
-            <h2>Picture Upload</h2>
+            <!-- <h2>Picture Upload</h2>
             <label for="lab_picture">Upload Computer Lab Picture:</label>
-            <input type="file" id="lab_picture" name="lab_picture" required><br><br>
+            <input type="file" id="lab_picture" name="lab_picture" accept=".png" required><br><br>
 
             <label for="env_picture">Upload Surrounding Environment Picture:</label>
-            <input type="file" id="env_picture" name="env_picture" required><br><br>
+            <input type="file" id="env_picture" name="env_picture" accept=".png" required><br><br>
 
             <label for="school_picture">Upload School Picture:</label>
-            <input type="file" id="school_picture" name="school_picture" required><br><br>
+            <input type="file" id="school_picture" name="school_picture" accept=".png" required><br><br> -->
+
+            <h2>Picture Upload</h2>
+
+            <!-- Upload Computer Lab Picture -->
+            <label for="lab_picture">Upload Computer Lab Picture:</label>
+            <input type="file" id="lab_picture" name="lab_picture" accept=".png" required>
+            <button type="button" onclick="openCamera('lab_canvas', 'lab_picture')">Use Webcam</button>
+            <canvas id="lab_canvas" style="display:none;"></canvas>
+            <br><br>
+
+            <!-- Upload Surrounding Environment Picture -->
+            <label for="env_picture">Upload Surrounding Environment Picture:</label>
+            <input type="file" id="env_picture" name="env_picture" accept=".png" required>
+            <button type="button" onclick="openCamera('env_canvas', 'env_picture')">Use Webcam</button>
+            <canvas id="env_canvas" style="display:none;"></canvas>
+            <br><br>
+
+            <!-- Upload School Picture -->
+            <label for="school_picture">Upload School Picture:</label>
+            <input type="file" id="school_picture" name="school_picture" accept=".png" required>
+            <button type="button" onclick="openCamera('school_canvas', 'school_picture')">Use Webcam</button>
+            <canvas id="school_canvas" style="display:none;"></canvas>
+            <br><br>
+
+            <!-- Video element for the webcam stream -->
+            <video id="webcam" autoplay style="display:none;"></video>
 
             <button type="submit">Submit Survey</button>
         </form>
@@ -165,6 +203,5 @@
         <p>&copy; 2024 IT Knowledge Centre. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
-
-

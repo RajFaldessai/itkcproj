@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $_SESSION['admin_logged_in'] = true;
-        header('Location: admin_dashboard.php');
+        header('Location: admin_dashboard2.php');
     } else {
         echo "Invalid login credentials.";
     }

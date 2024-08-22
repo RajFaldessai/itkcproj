@@ -89,13 +89,74 @@ $stmt->close();
             <tr><th>Parking Space:</th><td><?php echo $school['parking_space']; ?></td></tr>
             <tr><th>Residential Areas Nearby:</th><td><?php echo $school['residential_areas']; ?></td></tr>
             <tr><th>Shortcomings:</th><td><?php echo $school['shortcomings']; ?></td></tr>
-            <tr><th>Lab Picture:</th><td><img src="uploads/<?php echo $school['lab_picture']; ?>" alt="Lab Picture" width="200"></td></tr>
-            <tr><th>Environment Picture:</th><td><img src="uploads/<?php echo $school['environment_picture']; ?>" alt="Lab Picture" width="200"></td></tr>
-            <tr><th>School Picture:</th><td><img src="uploads/<?php echo $school['school_picture']; ?>" alt="Lab Picture" width="200"></td></tr>
+            <tr>
+    <th>Lab Picture:</th>
+    <td>
+        <div class="image-zoom-container">
+            <img src="uploads/<?php echo $school['lab_picture']; ?>" alt="Lab Picture" width="200">
+            <button class="zoom-btn" onclick="zoomImage('uploads/<?php echo $school['lab_picture']; ?>')">Zoom</button>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th>Environment Picture:</th>
+    <td>
+        <div class="image-zoom-container">
+            <img src="uploads/<?php echo $school['environment_picture']; ?>" alt="Environment Picture" width="200">
+            <button class="zoom-btn" onclick="zoomImage('uploads/<?php echo $school['environment_picture']; ?>')">Zoom</button>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th>School Picture:</th>
+    <td>
+        <div class="image-zoom-container">
+            <img src="uploads/<?php echo $school['school_picture']; ?>" alt="School Picture" width="200">
+            <button class="zoom-btn" onclick="zoomImage('uploads/<?php echo $school['school_picture']; ?>')">Zoom</button>
+        </div>
+    </td>
+</tr>
     </main>
     <footer>
         <p>&copy; 2024 IT Knowledge Centre. All rights reserved.</p>
     </footer>
+    <script>
+function zoomImage(imageSrc) {
+    // Create an overlay
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = '1000';
+    overlay.style.cursor = 'pointer';
+
+    // Create the enlarged image
+    const img = document.createElement('img');
+    img.src = imageSrc;
+    img.style.maxWidth = '90vw';
+    img.style.maxHeight = '90vh';
+    img.style.objectFit = 'contain';
+    img.style.border = '2px solid #fff';
+
+    // Append the image to the overlay
+    overlay.appendChild(img);
+
+    // Close the overlay when clicked
+    overlay.onclick = function() {
+        document.body.removeChild(overlay);
+    }
+
+    // Append the overlay to the body
+    document.body.appendChild(overlay);
+}
+</script>
+
 </body>
 </html>
 

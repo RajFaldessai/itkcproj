@@ -322,3 +322,32 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+/* CSS for zoom effect */
+.image-zoom-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-zoom-container img {
+    transition: transform 0.2s ease; /* Smooth zoom effect */
+}
+
+
+/* Optional: Add a zoom-in button for better control */
+.zoom-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.zoom-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
