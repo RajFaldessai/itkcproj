@@ -12,11 +12,104 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supervisor Management</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Add your stylesheet here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+        a:active {
+            background-color: #2980b9;
+        }
+        .add-supervisor {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #2ecc71;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .add-supervisor:hover {
+            background-color: #27ae60;
+        }
+        .add-supervisor:active {
+            background-color: #1e8449;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+        .back-button:active {
+            background-color: #1e69d2;
+        }
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 14px;
+            }
+            .add-supervisor, .back-button {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Supervisor Management</h1>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -48,8 +141,8 @@ $result = $conn->query($sql);
             ?>
         </tbody>
     </table>
-    <br>
-    <a href="add_supervisor.php">Add Supervisor</a>
+    <a href="add_supervisorSignUp.php" class="add-supervisor">Add Supervisor</a>
+    <a href="admin_dashboard2.php" class="back-button">Back to Admin Dashboard</a>
 </body>
 </html>
 <?php

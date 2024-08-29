@@ -77,7 +77,7 @@
   <div class="wrapper">
     <div class="registration_form">
       <div class="title">
-        Sign Up for SUPERVISOR
+        ADD SUPERVISOR
       </div>
       <form action="signUp.php" method="post">
         <div class="form_wrap">
@@ -108,7 +108,7 @@
             <input type="password" id="Confirm_password" name="cpassword" placeholder="Confirm Password" required>
           </div>
           <div class="input_wrap">
-            <input type="submit" value="Register Now" name="submit_email" class="submit_btn">
+            <input type="submit" value="Register" name="submit_email" class="submit_btn">
           </div>
         </div>
       </form>

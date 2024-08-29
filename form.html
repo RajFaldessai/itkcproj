@@ -54,19 +54,58 @@
             <input type="text" id="road_name" name="road_name" required><br><br>
 
             <label for="city_town">City/Town:</label>
-            <input type="text" id="city_town" name="city_town" required><br><br>
+            <select id="city_town" name="city_town" required>
+                <option value="">Select City/Town</option>
+                <option value="Bardez">Bardez</option>
+                <option value="Canacona">Canacona</option>
+                <option value="Mandrem">Mandrem</option>
+                <option value="Pernem">Pernem</option>
+                <option value="Bicholim">Bicholim</option>
+                <option value="Tivim">Tivim</option>
+                <option value="Margao">Margao</option>
+                <option value="Cuncolim">Cuncolim</option>
+                <option value="Nuvem">Nuvem</option>
+                <option value="Fatorda">Fatorda</option>
+                <option value="Panaji">Panaji</option>
+                <option value="Taleigao">Taleigao</option>
+                <option value="Benaulim">Benaulim</option>
+                <option value="Sanguem">Sanguem</option>
+                <option value="Savordem">Savordem</option>
+                <option value="Curchorem">Curchorem</option>
+                <option value="Quepem">Quepem</option>
+                <option value="Velim">Velim</option>
+                <option value="Curtorim">Curtorim</option>
+                <option value="Cortalim">Cortalim</option>
+                <option value="Dabolim">Dabolim</option>
+                <option value="Vasco">Vasco</option>
+                <option value="Mormugao">Mormugao</option>
+                <option value="Marcaim">Marcaim</option>
+                <option value="Shiroda">Shiroda</option>
+                <option value="Priol">Priol</option>
+                <option value="Valpoi">Valpoi</option>
+                <option value="Sanquelim">Sanquelim</option>
+            </select><br><br>
+
 
             <label for="pincode">Pincode:</label>
-            <input type="text" id="pincode" name="pincode" required><br><br>
+            <input type="text" id="pincode" name="pincode" required pattern="\d{6}"
+                title="Enter a valid 6-digit pincode.">
+            <br><br>
+
 
             <label for="district">District:</label>
-            <input type="text" id="district" name="district" required><br><br>
+            <select id="district" name="district" required>
+                <option value="">Select District</option>
+                <option value="North Goa">North Goa</option>
+                <option value="South Goa">South Goa</option>
+            </select><br><br>
+
 
             <h2>Principal Information</h2>
             <label for="principal_phone">Principal Phone Number:</label>
-            <input type="text" id="principal_phone" name="principal_phone" required required
-                pattern="^\+?\d{0,2}\s?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{9}$"
-                title="Enter a valid phone number."><br><br>
+            <input type="text" id="principal_phone" name="principal_phone" required pattern="\d{10}"
+                title="Enter a valid 10-digit phone number.">
+            <br><br>
 
             <h2>Student Information</h2>
             <label for="total_students">Total Students:</label>
@@ -130,10 +169,10 @@
             <input type="text" id="other_apps" name="other_apps"><br><br>
 
             <h2>Scheduling and Logistics</h2>
-            <label for="lecture_timings">Lecture Timings:</label>
+            <label for="lecture_timings">Lecture Timings Upto:</label>
             <input type="time" id="lecture_timings" name="lecture_timings" required><br><br>
 
-            <label for="lab_timings">Lab Timings:</label>
+            <label for="lab_timings">Lab Timings Upto:</label>
             <input type="time" id="lab_timings" name="lab_timings" required><br><br>
 
             <h2>Transportation Challenges</h2>
@@ -172,29 +211,45 @@
 
             <h2>Picture Upload</h2>
 
-            <!-- Upload Computer Lab Picture -->
-            <label for="lab_picture">Upload Computer Lab Picture:</label>
+
+            <!-- <label for="lab_picture">Upload Computer Lab Picture:</label>
             <input type="file" id="lab_picture" name="lab_picture" accept=".png" required>
             <button type="button" onclick="openCamera('lab_canvas', 'lab_picture')">Use Webcam</button>
             <canvas id="lab_canvas" style="display:none;"></canvas>
             <br><br>
 
-            <!-- Upload Surrounding Environment Picture -->
             <label for="env_picture">Upload Surrounding Environment Picture:</label>
             <input type="file" id="env_picture" name="env_picture" accept=".png" required>
             <button type="button" onclick="openCamera('env_canvas', 'env_picture')">Use Webcam</button>
             <canvas id="env_canvas" style="display:none;"></canvas>
             <br><br>
 
-            <!-- Upload School Picture -->
             <label for="school_picture">Upload School Picture:</label>
             <input type="file" id="school_picture" name="school_picture" accept=".png" required>
             <button type="button" onclick="openCamera('school_canvas', 'school_picture')">Use Webcam</button>
             <canvas id="school_canvas" style="display:none;"></canvas>
-            <br><br>
+            <br><br> -->
+
+            <!-- Upload Lab Picture -->
+            <label for="labPicture">Upload Lab Picture:</label>
+            <input type="file" id="labPicture" name="lab_picture">
+            <button type="button" onclick="useWebcam('labPicture')">Use Webcam</button>
+            <img id="labImage" src="" alt="Lab Picture">
+
+            <!-- Upload Surrounding Environment Picture -->
+            <label for="environmentPicture">Upload Surrounding Environment Picture:</label>
+            <input type="file" id="environmentPicture" name="environment_picture">
+            <button type="button" onclick="useWebcam('environmentPicture')">Use Webcam</button>
+            <img id="environmentImage" src="" alt="Environment Picture">
+
+            <!-- Upload School Picture -->
+            <label for="schoolPicture">Upload School Picture:</label>
+            <input type="file" id="schoolPicture" name="school_picture">
+            <button type="button" onclick="useWebcam('schoolPicture')">Use Webcam</button>
+            <img id="schoolImage" src="" alt="School Picture">
 
             <!-- Video element for the webcam stream -->
-            <video id="webcam" autoplay style="display:none;"></video>
+            <!-- <video id="webcam" autoplay style="display:none;"></video> -->
 
             <button type="submit">Submit Survey</button>
         </form>
